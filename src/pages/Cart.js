@@ -6,7 +6,7 @@ import FormatPrice from "../Components/FormatPrice/FormatPrice";
 const Cart=()=>{
 
     const {cart,Total_price,Clearitems,Gst}=useCartContext()
-  
+    
     return(
         <>
           <section className="px-8 md:px-16 xl:px-32 py-5 text-gray-500">

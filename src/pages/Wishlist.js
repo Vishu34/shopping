@@ -6,7 +6,7 @@ const Wishlist = () => {
   const { wishdata, ClearWishlist } = useWishContext();
 
   if (Array.isArray(wishdata) && wishdata.length === 0) {
-    return [];
+    return <p className="text-sm text-center py-5 text-red-600 font-semibold">There are no items in wishlist......</p>;
   } else {
     return (
       <>

@@ -1,4 +1,15 @@
 import Ads from "../Ads";
+import {motion} from 'framer-motion'
+
+const right={
+show:{x:-50},
+hide:{x:0}
+}
+
+const left={
+  show:{x:50},
+  hide:{x:0}
+}
 
 const AdsPhone = ({ data1, data2 }) => {
   data1 = {
@@ -33,10 +44,22 @@ img:"home/laptop3.avif",
       <section className="px-8 md:px-16 xl:px-32 ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 py-5 overflow-hidden" >
          
-          <div className="sm:flex items-center space-y-6 sm:space-y-0 p-3 rounded-md" style={{backgroundColor:'#f6f6f6'}}>
-          <Ads mydata={data1} /> </div>
-          <div className="sm:flex items-center space-y-6 sm:space-y-0 p-3 rounded-md " style={{backgroundColor:'rgb(165 213 236)'}}> <Ads mydata={data2} />
-           </div>
+          <motion.div 
+          initial="show"
+          whileInView="hide"
+          variants={right}
+          transition={{type:"spring", stiffness:300,delay:0.1}}
+          
+          className="sm:flex items-center space-y-6 sm:space-y-0 p-3 rounded-md" style={{backgroundColor:'#f6f6f6'}}>
+          <Ads mydata={data1} /> </motion.div>
+          <motion.div 
+          initial="show"
+          whileInView="hide"
+          variants={left}
+          transition={{type:"spring", stiffness:300,delay:0.1}}
+          className="sm:flex items-center space-y-6 sm:space-y-0 p-3 rounded-md " style={{backgroundColor:'rgb(165 213 236)'}}>
+           <Ads mydata={data2} />
+           </motion.div>
         </div>
       </section>
     </>

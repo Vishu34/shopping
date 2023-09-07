@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 
-
+body{
+  overflow-x: hidden;
+}
 :root{
   --bg-blue:#106cd8;
   --bg-grayblue:#f6f6f6
